@@ -1,4 +1,5 @@
 ﻿using LV2RUAP.Models;
+using LV2RUAP.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,12 @@ namespace LV2RUAP.Controllers
 {
     public class ContactController : ApiController
     {
+        private ContactRepository contactRepository;
+
+        public ContactController()
+        {
+            this.contactRepository = new ContactRepository();
+        }
         public Contact[] Get()
         {
             return new Contact[]
@@ -26,5 +33,6 @@ namespace LV2RUAP.Controllers
         }
             };
         }
+    
     }
 }
